@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Economia</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/interesCompuesto.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="../assets/sidebars.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+
+    <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 100%">
+      <a href="../ProyectoFinal.html"
+        class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <svg class="bi me-2" width="30" height="24">
+          <use xlink:href="" />
+        </svg>
+        <!--<span class="fs-5 fw-semibold">Ing. Economica</span>-->
+      </a>
+      <ul class="list-group list-group-horizontal-lg">
+        <li class="list-group-item">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#orders-collapse" aria-expanded="false">
+            Anualidades
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="amortizacion.html" class="link-dark rounded">Amortizacion</a></li>
+              <li><a href="capitalizacion.html" class="link-dark rounded">Capitalizacion</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#home1-collapse" aria-expanded="false">
+            Reparto Proporcional
+          </button>
+          <div class="collapse" id="home1-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="reparto_proporcional.html" class="link-dark rounded">Reparto Proporcional Directo Simple</a></li>
+              <li><a href="rpdc.html" class="link-dark rounded">Reparto Proporcional Directo Compuesto</a></li>
+              <li><a href="rpis.html" class="link-dark rounded">Reparto Proporcional Inverso Simple</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="list-group-item">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#home-collapse" aria-expanded="false">
+            Interes Simple
+          </button>
+          <div class="collapse" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="Interes_simple.html" class="link-dark rounded">Interes Simple</a></li>
+              <li><a href="ism.html" class="link-dark rounded">Interes Simple Con Monto</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#dashboard-collapse" aria-expanded="false">
+            Interes Compuesto
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="interesCompuesto.html" class="link-dark rounded">Calculadora Interes Compuesto</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="border-top my-3"></li>
+      </ul>
+    </div>
+
+    <!--<div class="b-example-divider"></div>-->
+    
+
+  </main>
+  <div align="center" class="w-100 p-3" style="overflow-y: auto;">
+    <!-- contenido principal -->
+    <div class="w-100 text-center">
+      <h4>Interes Compuesto</h4>
+    </div>
+    <div class="pb-1">
+      <label>Monto:</label>
+      <input type="number" id="monto">
+    </div>
+    <div class="pb-1">
+      <label>Capital:</label>
+      <input type="number" id="capital">
+    </div>
+    <div class="pb-1">
+      <label>Plazo:</label>
+      <input type="number" id="plazo" placeholder='meses, trimestres, etc'>
+    </div>
+    <div class="pb-1">
+      Tipo de plazo
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_p" id="tipo_p">
+        <option value="seleccione">Seleccione el tipo de plazo</option>
+        <option value="M">Mensual</option>
+        <option value="B">Bimestral</option>
+        <option value="T">Trimestral</option>
+        <option value="C">Cuatrimestral</option>
+        <option value="S">Semestral</option>
+        <option value="A">Semestral</option>
+      </select>
+    </div>
+  
+    <div class="pb-1">
+      <label>Tasa de interes:</label>
+      <input type="number" id="tasa" placeholder="E.M, E.T, etc">
+    </div>
+    <div class="pb-1">
+      Tipo de interes
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_i" id="tipo_i">
+        <option value="seleccione">Seleccione el tipo de interes que quieres</option>
+        <option value="Ef_M">Efectivo mensual</option>
+        <option value="Ef_B">Efectivo bimestral</option>
+        <option value="Ef_T">Efectivo trimestral</option>
+        <option value="Ef_C">Efectivo cuatrimestral</option>
+        <option value="Ef_S">Efectivo semestral</option>
+        <option value="Ef_A">Efectivo anual</option>
+        <option value="N_M">Nominal mensual</option>
+        <option value="N_B">Nominal bimestral</option>
+        <option value="N_T">Nominal trimestral</option>
+        <option value="N_S">Nominal semestrals</option>
+        <option value="N_A">Nominal anual</option>
+      </select>
+    </div>
+    <div class="pb-1">
+      <button onClick="calcularCapital()" class="btn btn-success btn-sm mt-1">Calcular Capital Inicial</button>
+      <button onClick="calcularMonto()" class="btn btn-success btn-sm mt-1">Calcular Monto</button>
+    </div>
+  
+    <div id="mensaje"></div>
+  
+    <!-- contenido principal -->
+  </div>
+  </div>
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/sidebars.js"></script>
+</body>
+
+</html>

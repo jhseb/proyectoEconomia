@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>Economia</title>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/interes_simple.js"></script>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
+      
+      
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+      
+        <style>
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+      
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+        </style>
+      
+      
+        <!-- Custom styles for this template -->
+        <link href="../assets/sidebars.css" rel="stylesheet">
+</head>
+<body>
+      <main>
+
+        <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 280px;">
+        <a href="../ProyectoFinal.html"
+            class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <svg class="bi me-2" width="30" height="24">
+            <use xlink:href="" />
+            </svg>
+            <span class="fs-5 fw-semibold">Ing. Economica</span>
+        </a>
+        <ul class="list-group list-group-horizontal-lg">
+          <li class="list-group-item">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#home1-collapse" aria-expanded="false">
+              Reparto Proporcional
+            </button>
+            <div class="collapse" id="home1-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="reparto_proporcional.html" class="link-dark rounded">Reparto Proporcional Directo Simple</a></li>
+                <li><a href="rpdc.html" class="link-dark rounded">Reparto Proporcional Directo Compuesto</a></li>
+                <li><a href="rpis.html" class="link-dark rounded">Reparto Proporcional Inverso Simple</a></li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="list-group-item">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#home-collapse" aria-expanded="false">
+              Interes Simple
+            </button>
+            <div class="collapse" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="Interes_simple.html" class="link-dark rounded">Interes Simple</a></li>
+                <li><a href="ism.html" class="link-dark rounded">Interes Simple Con Monto</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse" aria-expanded="false">
+              Interes Compuesto
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="interesCompuesto.html" class="link-dark rounded">Calculadora Interes Compuesto</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#orders-collapse" aria-expanded="false">
+              Anualidades
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="amortizacion.html" class="link-dark rounded">Amortizacion</a></li>
+                <li><a href="capitalizacion.html" class="link-dark rounded">Capitalizacion</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+        </ul>
+        </div>
+        <div class="w-100 p-3" style="overflow-y: auto;">
+              <div class="w-100 text-center">
+                <h4>Interes Simple</h4>
+              </div>
+              <div class="pb-1">
+                <label>Ingrese Capital:  </label>
+                <input type="number" id="capital" placeholder="$$$">
+            </div>
+            <div class="pb-1">
+                <label>Ingrese Interes:  </label>
+                <input type="number" id="tinteres" placeholder="%%%">
+            </div>
+            <div class="pb-1">
+                <label>Ingrese tiempo:  </label>
+                <input type="number" id="tiempo" placeholder="###">
+                <!-- <input type="month" id="tiempo"> -->
+            </div>
+              <!-- <div class="container-sm mt-3">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Persona</th>
+                      <th scope="col">Edad</th>
+                      <th scope="col">Inverso</th>
+                      <th scope="col">Indice</th>
+                      <th scope="col">FC</th>
+                      <th scope="col">Cociente</th>
+                    </tr>
+                  </thead>
+                  <tbody id="col1">
+                    <th><label for="">A</label></th>
+                    <th><input type="number" placeholder="###" id="edad1"></th>
+                  </tbody>
+                  <tbody id="col2">
+                    <th><label for="">B</label></th>
+                    <th><input type="number" placeholder="###" id="edad2"></th>
+                  </tbody>
+                  <tbody id="col3"></tbody>
+                  <tbody id="col4"></tbody>
+                </table>
+              </div> -->
+            <div class="pb-1">
+                <button onClick="calcular_i()" class="btn btn-success btn-sm mt-1">Calcular Interes Simple</button>
+            </div>
+            <div class="pb-1">
+                <label>Interes Bancario:  </label>
+                <label for="" id="interes"></label>
+            </div>
+            <div class="pb-1">
+                <label>Interes Racional:  </label>
+                <label for="" id="interesr"></label>
+            </div>
+        </div>     
+    </main>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/sidebars.js"></script>
+</body>
+</html>
