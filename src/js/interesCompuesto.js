@@ -41,7 +41,7 @@ function transformar_interes(interes,tipo) {
 }
 
 function definir_variables(interes, tipo_i, plazo, tipo_p) {
-	alert(tipo_i);
+	
 	if (tipo_p == "M") {
 		ele1 = 12;
 	} else if (tipo_p == "B"){
