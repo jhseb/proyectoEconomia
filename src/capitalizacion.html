@@ -39,7 +39,7 @@
 
   <main>
 
-    <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 280px;">
+    <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 100%;">
       <a href="../ProyectoFinal.html"
         class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
         <svg class="bi me-2" width="30" height="24">
@@ -48,6 +48,18 @@
         <span class="fs-5 fw-semibold">Ing. Economica</span>
       </a>
       <ul class="list-group list-group-horizontal-lg">
+        <li class="list-group-item">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#orders-collapse" aria-expanded="false">
+            Anualidades
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="amortizacion.html" class="link-dark rounded">Amortizacion</a></li>
+              <li><a href="capitalizacion.html" class="link-dark rounded">Capitalizacion</a></li>
+            </ul>
+          </div>
+        </li>
         <li class="list-group-item">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
             data-bs-target="#home1-collapse" aria-expanded="false">
@@ -85,25 +97,16 @@
             </ul>
           </div>
         </li>
-        <li class="list-group-item">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#orders-collapse" aria-expanded="false">
-            Anualidades
-          </button>
-          <div class="collapse" id="orders-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="amortizacion.html" class="link-dark rounded">Amortizacion</a></li>
-              <li><a href="capitalizacion.html" class="link-dark rounded">Capitalizacion</a></li>
-            </ul>
-          </div>
-        </li>
+    
         <li class="border-top my-3"></li>
       </ul>
     </div>
 
-    <div class="b-example-divider"></div>
+  </main>
+
+    <!--<div class="b-example-divider"></div>-->
     <div class="w-100 p-3" style="overflow-y: auto;">
-    <!-- contenido principal -->
+      <!-- contenido principal -->
       <div class="w-100 text-center">
         <h4>Capitalización</h4>
       </div>
@@ -122,7 +125,7 @@
       <div class="pb-1">
         <button onClick="calcular()" class="btn btn-success btn-sm mt-1">Generar tabla de capitalizacion</button>
       </div>
-
+    
       <div class="container-sm mt-3">
         <div id="mensaje"></div>
         <table class="table">
@@ -136,17 +139,17 @@
             </tr>
           </thead>
           <tbody id="table-c">
-
+    
           </tbody>
         </table>
-    <!-- contenido principal -->
+        <!-- contenido principal -->
       </div>
     </div>
 
-  </main>
 
 
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/sidebars.js"></script>
 </body>
 

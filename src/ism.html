@@ -42,7 +42,7 @@
 <body>
     <main>
 
-        <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 280px;">
+        <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 100%;">
             <a href="../ProyectoFinal.html"
                 class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
                 <svg class="bi me-2" width="30" height="24">
@@ -51,6 +51,18 @@
                 <span class="fs-5 fw-semibold">Ing. Economica</span>
             </a>
             <ul class="list-group list-group-horizontal-lg">
+              <li class="list-group-item">
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#orders-collapse" aria-expanded="false">
+                  Anualidades
+                </button>
+                <div class="collapse" id="orders-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="amortizacion.html" class="link-dark rounded">Amortizacion</a></li>
+                    <li><a href="capitalizacion.html" class="link-dark rounded">Capitalizacion</a></li>
+                  </ul>
+                </div>
+              </li>
                 <li class="list-group-item">
                     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
                       data-bs-target="#home1-collapse" aria-expanded="false">
@@ -88,47 +100,35 @@
                       </ul>
                     </div>
                   </li>
-                  <li class="list-group-item">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                      data-bs-target="#orders-collapse" aria-expanded="false">
-                      Anualidades
-                    </button>
-                    <div class="collapse" id="orders-collapse">
-                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="amortizacion.html" class="link-dark rounded">Amortizacion</a></li>
-                        <li><a href="capitalizacion.html" class="link-dark rounded">Capitalizacion</a></li>
-                      </ul>
-                    </div>
-                  </li>
                   <li class="border-top my-3"></li>
             </ul>
         </div>
-        <div class="w-100 p-3" style="overflow-y: auto;">
-            <div class="w-100 text-center">
-                <h4>Interes Simple Con Monto</h4>
-            </div>
-            <div class="pb-1">
-                <label>Ingrese Capital: </label>
-                <input type="number" id="capital" placeholder="$$$">
-            </div>
-            <div class="pb-1">
-                <label>Ingrese Interes: </label>
-                <input type="number" id="tinteres" placeholder="%%%">
-            </div>
-            <div class="pb-1">
-                <label>Ingrese tiempo: </label>
-                <input type="number" id="tiempo" placeholder="###">
-                <!-- <input type="month" id="tiempo"> -->
-            </div>
-            <div class="pb-1">
-                <button onClick="calcular_m()" class="btn btn-success btn-sm mt-1">Calcular Interes Simple</button>
-            </div>
-            <div class="pb-1">
-                <label>Monto = </label>
-                <label for="" id="monto"></label>
-            </div>
-        </div>
     </main>
+    <div class="w-100 p-3" style="overflow-y: auto;">
+      <div class="w-100 text-center">
+        <h4>Interes Simple Con Monto</h4>
+      </div>
+      <div class="pb-1">
+        <label>Ingrese Capital: </label>
+        <input type="number" id="capital" placeholder="$$$">
+      </div>
+      <div class="pb-1">
+        <label>Ingrese Interes: </label>
+        <input type="number" id="tinteres" placeholder="%%%">
+      </div>
+      <div class="pb-1">
+        <label>Ingrese tiempo: </label>
+        <input type="number" id="tiempo" placeholder="###">
+        <!-- <input type="month" id="tiempo"> -->
+      </div>
+      <div class="pb-1">
+        <button onClick="calcular_m()" class="btn btn-success btn-sm mt-1">Calcular Interes Simple</button>
+      </div>
+      <div class="pb-1">
+        <label>Monto = </label>
+        <label for="" id="monto"></label>
+      </div>
+    </div>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/sidebars.js"></script>
 </body>
