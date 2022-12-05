@@ -1,5 +1,5 @@
 var capital, tinteres, tiempo, tiempof, interesb, i, tiempor, interesr
-
+var x
 function calcular_i(){
     capital = $("#capital").val();
     tinteres = $("#tinteres").val();
