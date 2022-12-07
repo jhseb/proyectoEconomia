@@ -7,6 +7,7 @@ var tipo_p;
 var ele1;
 var ele2;
 var division;
+var casa;
 $(function(){
 
 });
