@@ -7,27 +7,30 @@ var tipo_p;
 var ele1;
 var ele2;
 var division;
-var casa;
+var interes
+
 $(function(){
 
 });
 
-function getData(){
+function getData() {
 	plazo = $("#plazo").val();
-	interes  = parseFloat( $("#tasa").val() );
+	interes = parseFloat($("#tasa").val());
 	monto = $("#monto").val();
 	capital = parseFloat($("#capital").val());
 	tipo_i = document.getElementById("tipo_i").value;
 	tipo_p = document.getElementById("tipo_p").value;
-	tipo_a = document.getElementById("tipo_a").value;
-	
+	tipo_a = document.getElementById("tipo_a").value
 	
 	interes = interes / 100;
 	//Pasar a efectiva sin importar el caso
 	interes = transformar_interes(interes, tipo_i, tipo_a);
 	// Comversion de tasas
 	interes = definir_variables(interes, tipo_i, plazo, tipo_p);
+	alert(interes);
+
 }
+
 
 function anticipada(interes, tipo_a) {
 	switch (tipo_a) {
@@ -56,6 +59,7 @@ function transformar_interes(interes,tipo,tipo_a) {
 	}
 	interes = anticipada(interes, tipo_a);
 	return interes;
+	
 }
 
 function definir_variables(interes, tipo_i, plazo, tipo_p) {
@@ -102,7 +106,7 @@ function conversion(interes, ele1, ele2) {
 		interes = interes - 1;
 	
 	}
-	alert(interes);
+	return interes;
 }
 
 function Decimal(val){
@@ -122,8 +126,9 @@ function calcularCapital(){
 	getData();
 	capital = monto / ( Math.pow( ( 1 + interes ), plazo) );
 	capital = Decimal(capital);
+	
 	$("#capital").val(capital);
-	ob.innerHTML =  " DB";
+	
 	/*alert(tipo_p);*/
 	/*alert(interes + tipo_i + plazo + tipo_p);*/
 }
