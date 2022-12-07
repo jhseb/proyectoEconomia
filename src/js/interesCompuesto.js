@@ -6,7 +6,7 @@ var tipo_i;
 var tipo_p;
 var ele1;
 var ele2;
-var divi;
+var division;
 $(function(){
 
 });
@@ -18,12 +18,28 @@ function getData(){
 	capital = parseFloat($("#capital").val());
 	tipo_i = document.getElementById("tipo_i").value;
 	tipo_p = document.getElementById("tipo_p").value;
-	interes = transformar_interes(interes, tipo_i);
+	tipo_a = document.getElementById("tipo_a").value;
+	
+	
 	interes = interes / 100;
-	definir_variables(interes, tipo_i, plazo, tipo_p);
+	//Pasar a efectiva sin importar el caso
+	interes = transformar_interes(interes, tipo_i, tipo_a);
+	// Comversion de tasas
+	interes = definir_variables(interes, tipo_i, plazo, tipo_p);
 }
 
-function transformar_interes(interes,tipo) {
+function anticipada(interes, tipo_a) {
+	switch (tipo_a) {
+		case "Si":
+			interes = (interes/(1 - interes));
+			break;
+		case "No":
+			break;
+	}
+	return interes;
+}
+
+function transformar_interes(interes,tipo,tipo_a) {
 	if (tipo == "N_M") {
 		interes = interes / 12;
 	} else if (tipo == "N_B") {
@@ -37,6 +53,7 @@ function transformar_interes(interes,tipo) {
 	} else if (tipo == "N_A") {
 		interes = interes / 1;
 	}
+	interes = anticipada(interes, tipo_a);
 	return interes;
 }
 
@@ -71,19 +88,20 @@ function definir_variables(interes, tipo_i, plazo, tipo_p) {
 		ele2 = 1;
 	}
 
-	conversion(ele1, ele2);
+	interes = conversion(interes,ele1, ele2);
+	return interes;
 }
 
 
-function conversion(ele1, ele2) {
-	division = ele1 / ele2;
-
-	if (ele1 != ele2) {
-		interes = (Math.pow(interes + 1, division));
-		interes = interes - 1;
-		alert(interes);
-	}
+function conversion(interes, ele1, ele2) {
+	division = (ele2 * (1 / ele1));
 	
+	if (ele1 != ele2) {
+		interes = (Math.pow(interes+1, division ));
+		interes = interes - 1;
+	
+	}
+	alert(interes);
 }
 
 function Decimal(val){
@@ -104,6 +122,7 @@ function calcularCapital(){
 	capital = monto / ( Math.pow( ( 1 + interes ), plazo) );
 	capital = Decimal(capital);
 	$("#capital").val(capital);
+	ob.innerHTML =  " DB";
 	/*alert(tipo_p);*/
 	/*alert(interes + tipo_i + plazo + tipo_p);*/
 }

@@ -4,7 +4,7 @@ body {
   min-height: -webkit-fill-available;
 }
 
-
+a
 
 html {
   height: -webkit-fill-available;
@@ -16,6 +16,10 @@ html {
 #tipo_p {
   width: 500px;
 }
+#tipo_a {
+  width: 500px;
+}
+
 main {
   display: flex;
   flex-wrap: nowrap;
@@ -25,6 +29,11 @@ main {
   overflow-x: auto;
   overflow-y: hidden;
   
+}
+
+#encabezado{
+
+  background: url(../src/imagenes/finanzas.jpg);
 }
 
 .b-example-divider {

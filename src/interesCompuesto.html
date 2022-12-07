@@ -39,7 +39,7 @@
   <main>
 
     <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 100%">
-      <a href="../ProyectoFinal.html"
+      <a href="../ProyectoFinal.html" id="encabezado"
         class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
         <svg class="bi me-2" width="30" height="24">
           <use xlink:href="" />
@@ -125,19 +125,19 @@
     <div class="pb-1">
       Tipo de plazo
       <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_p" id="tipo_p">
-        <option value="seleccione">Seleccione el tipo de plazo</option>
+        <option value="seleccione">Seleccione que modalidad de pago que utiliza</option>
         <option value="M">Mensual</option>
         <option value="B">Bimestral</option>
         <option value="T">Trimestral</option>
         <option value="C">Cuatrimestral</option>
         <option value="S">Semestral</option>
-        <option value="A">Semestral</option>
+        <option value="A">Anual</option>
       </select>
     </div>
-  
+  ____________________________________________________________________________
     <div class="pb-1">
       <label>Tasa de interes:</label>
-      <input type="number" id="tasa" placeholder="E.M, E.T, etc">
+      <input type="number" id="tasa" placeholder="Numero del interes">
     </div>
     <div class="pb-1">
       Tipo de interes
@@ -154,6 +154,14 @@
         <option value="N_T">Nominal trimestral</option>
         <option value="N_S">Nominal semestrals</option>
         <option value="N_A">Nominal anual</option>
+      </select>
+    </div>
+    <div class="pb-1">
+       ¿El tipo de interes que usa es anticipado?
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_a" id="tipo_a">
+        <option value="seleccione">Seleccione si es anticipada</option>
+        <option value="Si">Si</option>
+        <option value="No">No</option>
       </select>
     </div>
     <div class="pb-1">
