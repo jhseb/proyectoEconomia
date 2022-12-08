@@ -7,7 +7,8 @@ var tipo_p;
 var ele1;
 var ele2;
 var division;
-var interes
+var interes;
+var mostrar;
 
 $(function(){
 
@@ -20,17 +21,46 @@ function getData() {
 	capital = parseFloat($("#capital").val());
 	tipo_i = document.getElementById("tipo_i").value;
 	tipo_p = document.getElementById("tipo_p").value;
-	tipo_a = document.getElementById("tipo_a").value
+	tipo_a = document.getElementById("tipo_a").value;
+	mostrar = document.getElementById("tipo_a").value;
+
 	
 	interes = interes / 100;
 	//Pasar a efectiva sin importar el caso
 	interes = transformar_interes(interes, tipo_i, tipo_a);
 	// Comversion de tasas
 	interes = definir_variables(interes, tipo_i, plazo, tipo_p);
-	alert(interes);
+	
+	//Calcular plazo
+	//plazo = calcular_plazo(plazo, tipo_p);
 
 }
 
+function calcular_plazo(plazo, tipo_p) {
+	switch (tipo_p) {
+		case "M":
+			mostrar = "Mensual";
+			break;
+		case "B":
+			mostrar = "Bimestral";
+			break;
+		case "T":
+			mostrar = "Trimestral";
+			break;
+		case "C":
+			mostrar = "Cuatrimestral";
+			break;
+		case "S":
+			mostrar = "Semestral";
+			break;
+		case "A":
+			mostrar = "Anual";
+			break;
+	}
+
+	return plazo;
+
+}
 
 function anticipada(interes, tipo_a) {
 	switch (tipo_a) {
@@ -120,6 +150,8 @@ function calcularMonto(){
 	monto = capital*( Math.pow( ( 1 + interes ), plazo) );
 	monto = Decimal(monto);
 	$("#monto").val(monto);
+	document.getElementById("mensaje").innerHTML = "El capital inicial es:" + monto;
+	document.getElementById("mensaje").style.display = "block";
 }
 
 function calcularCapital(){
@@ -128,7 +160,8 @@ function calcularCapital(){
 	capital = Decimal(capital);
 	
 	$("#capital").val(capital);
-	
+	document.getElementById("mensaje").innerHTML = "El capital inicial es:"+ capital;
+	document.getElementById("mensaje").style.display = "block";
 	/*alert(tipo_p);*/
 	/*alert(interes + tipo_i + plazo + tipo_p);*/
 }
