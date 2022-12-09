@@ -7,7 +7,8 @@
   <meta name="description" content="">
   <title>Economia</title>
   <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/interesCompuesto.js"></script>
+  <script src="js/nominal_efectiva.js"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
 
 
   <!-- Bootstrap core CSS -->
@@ -38,13 +39,13 @@
 
   <main>
 
-    <div class="flex-shrink-0 p-3 bg-white shadow" style="width: 100%">
+    <div class="flex-shrink-0 p-3 bg-#CBF3FD shadow" style="width: 100%;">
       <a href="../index.html"
         class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
         <svg class="bi me-2" width="30" height="24">
           <use xlink:href="" />
         </svg>
-        <!--<span class="fs-5 fw-semibold">Ing. Economica</span>-->
+        <span class="fs-5 fw-semibold">Ing. Economica</span>
       </a>
       <ul class="list-group list-group-horizontal-lg">
         <li class="list-group-item">
@@ -98,22 +99,21 @@
         </li>
 
 
-
         <li class="list-group-item">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-            data-bs-target="#dashboard1-collapse" aria-expanded="false">
-            Conversión de Tasas
-          </button>
-          <div class="collapse" id="dashboard1-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="nominal_efectiva.html" class="link-dark rounded">Nominal a Efectiva</a></li>
-              <li><a href="efectiva_nominal.html" class="link-dark rounded">Efectiva a Nominal</a></li>
-              <li><a href="efectivas.html" class="link-dark rounded">Efectivas</a></li>
-              <li><a href="nominales.html" class="link-dark rounded">Nominales</a></li>
-            </ul>
-          </div>
-        </li>
-        
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#dashboard1-collapse" aria-expanded="false">
+              Conversión de Tasas
+            </button>
+            <div class="collapse" id="dashboard1-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="nominal_efectiva.html" class="link-dark rounded">Nominal a Efectiva</a></li>
+                <li><a href="efectiva_nominal.html" class="link-dark rounded">Efectiva a Nominal</a></li>
+                <li><a href="efectivas.html" class="link-dark rounded">Efectivas</a></li>
+                <li><a href="nominales.html" class="link-dark rounded">Nominales</a></li>
+              </ul>
+            </div>
+          </li>
+       
         <li class="border-top my-3"></li>
       </ul>
     </div>
@@ -125,63 +125,58 @@
   <div align="center" class="w-100 p-3" style="overflow-y: auto;">
     <!-- contenido principal -->
     <div class="w-100 text-center">
-      <h4>Interes Compuesto</h4>
+      <h4>Nominal a Efectiva</h4>
     </div>
     <div class="pb-1">
-      <label>Monto:</label>
-      <input type="number" id="monto">
+        <label>Ingrese Interes: </label>
+        <input type="number" id="tasaN" placeholder="%%%">
     </div>
     <div class="pb-1">
-      <label>Capital:</label>
-      <input type="number" id="capital">
-    </div>
-    <div class="pb-1">
-      <label>Plazo:</label>
-      <input type="number" id="plazo" placeholder='meses, trimestres, etc'>
-    </div>
-    <div class="pb-1">
-      Tipo de plazo
-      <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_p" id="tipo_p">
-        <option value="seleccione">Seleccione el tipo de plazo</option>
+      Tipo de tasa
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_c" id="periodoN">
+        <option value="seleccione">Periodicidad</option>
         <option value="M">Mensual</option>
         <option value="B">Bimestral</option>
         <option value="T">Trimestral</option>
         <option value="C">Cuatrimestral</option>
         <option value="S">Semestral</option>
-        <option value="A">Semestral</option>
-      </select>
-    </div>
-  
-    <div class="pb-1">
-      <label>Tasa de interes:</label>
-      <input type="number" id="tasa" placeholder="E.M, E.T, etc">
-    </div>
-    <div class="pb-1">
-      Tipo de interes
-      <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_i" id="tipo_i">
-        <option value="seleccione">Seleccione el tipo de interes que quieres</option>
-        <option value="Ef_M">Efectivo mensual</option>
-        <option value="Ef_B">Efectivo bimestral</option>
-        <option value="Ef_T">Efectivo trimestral</option>
-        <option value="Ef_C">Efectivo cuatrimestral</option>
-        <option value="Ef_S">Efectivo semestral</option>
-        <option value="Ef_A">Efectivo anual</option>
-        <option value="N_M">Nominal mensual</option>
-        <option value="N_B">Nominal bimestral</option>
-        <option value="N_T">Nominal trimestral</option>
-        <option value="N_S">Nominal semestrals</option>
-        <option value="N_A">Nominal anual</option>
+        <option value="A">Anual</option>
       </select>
     </div>
     <div class="pb-1">
-      <button onClick="calcularCapital()" class="btn btn-success btn-sm mt-1">Calcular Capital Inicial</button>
-      <button onClick="calcularMonto()" class="btn btn-success btn-sm mt-1">Calcular Monto</button>
+        <input class="form-check-input" type="checkbox" value="" id="nominalA">
+        <label class="form-check-label" for="nominalA">
+            Anticipada
+        </label>
     </div>
-  
-    <div id="mensaje"></div>
+    <div class="pb-1">
+        Tipo de tasa
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_c" id="periodoE">
+          <option value="seleccione">Periodicidad</option>
+          <option value="M">Mensual</option>
+          <option value="B">Bimestral</option>
+          <option value="T">Trimestral</option>
+          <option value="C">Cuatrimestral</option>
+          <option value="S">Semestral</option>
+          <option value="A">Anual</option>
+        </select>
+      </div>
+      <div class="pb-1">
+          <input class="form-check-input" type="checkbox" value="" id="efectivaA">
+          <label class="form-check-label" for="efectivaA">
+              Anticipada
+          </label>
+      </div>
+    <div class="pb-1">
+      <button onClick="convertirTasa()" class="btn btn-success btn-sm mt-1">Convertir Tasa</button>
+    </div>
+
+    <div class="pb-1">
+        <label>Tasa convertida: </label>
+        <label for="" id="tasaE"></label>  
+    </div>
   
     <!-- contenido principal -->
-  </div>
   </div>
 
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
@@ -189,3 +184,6 @@
 </body>
 
 </html>
+
+
+
