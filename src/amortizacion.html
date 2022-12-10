@@ -45,7 +45,7 @@
         <svg class="bi me-2" width="30" height="24">
           <use xlink:href="" />
         </svg>
-        <span class="fs-5 fw-semibold">Ing. Economica</span>
+        <span class="fs-5 fw-semibold">TRABAJO FINAL INGENIERIA ECONOMICA</span>
       </a>
       <ul class="list-group list-group-horizontal-lg">
         <li class="list-group-item">
@@ -119,7 +119,7 @@
     
 
   </main>
-<div class="w-100 p-3" style="overflow-y: auto;">
+<div align="center" class="w-100 p-3" style="overflow-y: auto;">
   <!-- contenido principal -->
   <div class="w-100 text-center">
     <h4>Amortizacion</h4>
@@ -128,14 +128,62 @@
     <label>Monto:</label>
     <input type="number" id="monto">
   </div>
-  <div class="pb-1">
+  <!--<div class="pb-1">
     <label>Plazo:</label>
     <input type="number" id="plazo" placeholder='meses, trimestres, etc'>
   </div>
   <div class="pb-1">
     <label>Tasa de interes:</label>
     <input type="number" id="tasa" placeholder="E.M, E.T, etc">
+  </div>-->
+
+  <div class="pb-1">
+    <label>Plazo de la deuda:</label>
+    <input type="number" id="plazo" placeholder='Numero del plazo'>
   </div>
+  <div class="pb-1">
+    Tipo de plazo
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_p" id="tipo_p">
+      <option value="seleccione">Seleccione que modalidad de pago que utiliza</option>
+      <option value="M">Meses</option>
+      <option value="B">Bimestres</option>
+      <option value="T">Trimestres</option>
+      <option value="C">Cuatrimestrres</option>
+      <option value="S">Semestres</option>
+      <option value="A">Años</option>
+    </select>
+  </div>
+  ____________________________________________________________________________
+  <div class="pb-1">
+    <label>Tasa de interes:</label>
+    <input type="number" id="tasa" placeholder="Numero del interes">
+  </div>
+  <div class="pb-1">
+    Tipo de interes
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_i" id="tipo_i">
+      <option value="seleccione">Seleccione el tipo de interes que quieres</option>
+      <option value="Ef_M">Efectivo mensual</option>
+      <option value="Ef_B">Efectivo bimestral</option>
+      <option value="Ef_T">Efectivo trimestral</option>
+      <option value="Ef_C">Efectivo cuatrimestral</option>
+      <option value="Ef_S">Efectivo semestral</option>
+      <option value="Ef_A">Efectivo anual</option>
+      <option value="N_M">Anual Nominal mensual</option>
+      <option value="N_B">Anual Nominal bimestral</option>
+      <option value="N_T">Anual Nominal trimestral</option>
+      <option value="N_S">Anual Nominal semestrals</option>
+      <option value="N_A">Anual Nominal anual</option>
+    </select>
+  </div>
+  <div class="pb-1">
+    ¿El tipo de interes que usa es anticipado?
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="tipo_a" id="tipo_a">
+      <option value="seleccione">Seleccione si es anticipada</option>
+      <option value="Si">Si</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+
   <div class="pb-1">
     <button onClick="calcular()" class="btn btn-success btn-sm mt-1">Generar tabla de amortizacion</button>
   </div>

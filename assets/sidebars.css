@@ -38,6 +38,7 @@ main {
 #encabezado{
 
   background: url(../src/imagenes/finanzas.jpg);
+  background-size: cover;
 }
 #mensaje{
 width: 50%;
@@ -45,6 +46,8 @@ align-content: center;
 display: none;
 
 }
+
+
 
 .b-example-divider {
   flex-shrink: 0;
