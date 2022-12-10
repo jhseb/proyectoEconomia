@@ -150,7 +150,7 @@ function calcularMonto(){
 	monto = capital*( Math.pow( ( 1 + interes ), plazo) );
 	monto = Decimal(monto);
 	$("#monto").val(monto);
-	document.getElementById("mensaje").innerHTML = "El capital inicial es:" + monto;
+	document.getElementById("mensaje").innerHTML = "El monto es:" + monto;
 	document.getElementById("mensaje").style.display = "block";
 }
 
