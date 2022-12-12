@@ -141,7 +141,6 @@ function conversion(interes, ele1, ele2) {
 
 
 function calcularCuota() {
-	alert(tasa);
 	k =  ( Math.pow((1 + tasa), plazo) -1 ) /  tasa;
 	cuota = monto / k;
 	cuota = cuota.toFixed(2);
